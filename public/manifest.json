@@ -1,0 +1,15 @@
+{
+  "name": "Headline Fetcher",
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "description": "Retrieves headlines relevant to the website you are currently on",
+  "content_scripts": [{
+    "js": [ "content.js"],
+    "matches": [ "<all_urls>"]
+   }],
+  "background": {
+    "scripts": ["background.js"]
+   },
+   "permissions": ["contextMenus", "tabs"],
+   "web_accessible_resources" : ["*.html"]
+}
