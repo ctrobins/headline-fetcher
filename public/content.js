@@ -1,13 +1,12 @@
 chrome.runtime.onMessage.addListener(request => {
   if (request.type === 'getHeadlines') {
-    const modal = document.createElement('div');
-    modal.innerHTML =`<dialog style="height:40%">
-        <iframe id="headlineFetcher"style="height:100%"></iframe>
+    const modal = document.createElement('dialog');
+    modal.setAttribute("style", "height:40%");
+    modal.innerHTML = `<iframe id="headlineFetcher"style="height:100%"></iframe>
         <div style="position:absolute; top:0px; left:5px;">  
             <button>x</button>
-        </div>
-        </dialog>`;
-    document.getElementsByTagName('body')[0].appendChild(modal);
+        </div>`;
+    document.body.appendChild(modal);
     const dialog = document.querySelector("dialog");
     dialog.showModal();
     const iframe = document.getElementById("headlineFetcher");  
